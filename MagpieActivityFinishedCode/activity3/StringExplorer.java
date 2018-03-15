@@ -21,8 +21,7 @@ public class StringExplorer
 		System.out.println ("After toLowerCase(), sample = " + sample);
 		
 		//  Try other methods here:
-		int fromIndex = sample.indexOf("quick", 8);
-		System.out.println(fromIndex);
+		//  Tried // Explored
 
 	}
 
