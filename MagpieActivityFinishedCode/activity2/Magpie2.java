@@ -1,15 +1,3 @@
-/**
- * A program to carry on conversations with a human user.
- * This is the initial version that:  
- * <ul><li>
- *       Uses indexOf to find strings
- * </li><li>
- * 		    Handles responding to simple words and phrases 
- * </li></ul>
- * This version uses a nested if to handle default responses.
- * @author Laurie White
- * @version April 2012
- */
 public class Magpie2
 {
 	/**
@@ -34,34 +22,27 @@ public class Magpie2
 		String response = "";
 		String statementTrim = statement.trim();
 		
-		if (statement.indexOf("no") >= 0)
-		{
+		if (statement.indexOf("no") >= 0){
 			response = "Why so negative?";
-		}
-		else if (statement.indexOf("mother") >= 0
-				|| statement.indexOf("father") >= 0
-				|| statement.indexOf("sister") >= 0
-				|| statement.indexOf("brother") >= 0)
-		{
+		} else if (statement.indexOf("mother") >= 0 || statement.indexOf("father") >= 0 || statement.indexOf("sister") >= 0 || statement.indexOf("brother") >= 0){
 			response = "Tell me more about your family.";
-		} else if (statement.indexOf("dog") >= 0 || statement.indexOf("cat") >= 0){
-			response = "Tell me more about your pets.";
+		} else if (statement.indexOf("Germany") >= 0 || statement.indexOf("Germany") >= 0){
+			response = "I used to live in Italy. We have pretty girls here";
+		} else if (statement.indexOf("dog") >= 0 || statement.indexOf("cat") >= 0 || statement.indexOf("pet") >= 0 || statement.indexOf("snake") >= 0){
+			response = "I also had some pets. But my Dog died 1 year ago.";
+		} else if (statement.indexOf("Germany") >= 0 || statement.indexOf("Germany") >= 0){
+			response = "I used to live in Italy. We have pretty girls here";
 		} else if (statement.indexOf("Mr") >= 0 || statement.indexOf("Mr.") >= 0){
-			response = "He sounds like a good teacher.";
+			response = "Oh Wait I also had him as my teacher!!";
 		} else if (statement.indexOf("Mrs") >= 0 || statement.indexOf("Mrs.") >= 0) {
-			response = "She sounds like a good teacher.";
-		} else if (!(statementTrim.length() >= 1)){
-			response = "Say something, please.";
-		} else if (statement.indexOf("weather") >= 0){
-			response = "I think it is good to bring an umbrella everyday just in case.";
+			response = "Wait!!!! I also had her as my teacher.";
 		} else if ((statement.indexOf("I") >= 0 || statement.indexOf("i") >= 0 )&& statement.indexOf("think") >= 0){
-			response = "You are always right.";
-		} else if (statement.indexOf("china") >= 0 || statement.indexOf("China") >= 0){
-			response = "Service Unavailable: GFW Blockade";
-		}
-		
-		else
-		{
+			response = "Amen. LMAO";
+		} else if (!(statementTrim.length() >= 1)){
+			response = "You Serious Bro?";
+		} else if (statement.indexOf("food") >= 0){
+			response = "My favorite food is Korean BBQ!!!!!! LOVE THEM SO MUCH!!!!!!!!!!!!!!!!!!!!!<3<3";
+		} else {
 			response = getRandomResponse();
 		}
 		return response;
@@ -78,25 +59,18 @@ public class Magpie2
 		int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
 		String response = "";
 		
-		if (whichResponse == 0)
-		{
-			response = "Interesting, tell me more.";
-		}
-		else if (whichResponse == 1)
-		{
-			response = "Hmmm.";
-		}
-		else if (whichResponse == 2)
-		{
-			response = "Do you really think so?";
-		}
-		else if (whichResponse == 3)
-		{
-			response = "You don't say.";
+		if (whichResponse == 0){
+			response = "WOWOWOWOWWOW!!!!";
+		} else if (whichResponse == 1){
+			response = "You Smart Man";
+		} else if (whichResponse == 2){
+			response = "But Why....?";
+		} else if (whichResponse == 3){
+			response = "You don't say that things to Robots";
 		} else if (whichResponse == 4){
-			response = "Wow I'm intrigued.";
+			response = "Bra, Your Boned";
 		} else if (whichResponse == 5){
-			response = "Honestly, I'm just very glad we get to chat like this.";
+			response = "LAMO you are a funny guy. :)))";
 		}
 
 		return response;
