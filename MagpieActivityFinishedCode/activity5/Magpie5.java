@@ -265,8 +265,12 @@ public class Magpie5
 			"Hmmm.",
 			"Do you really think so?",
 			"You don't say.",
-			"Keep on going. (I'm not really listening.)",
-			"You know you are extremely lonely, right? I mean, that's why you chat with ME."
+			"WOWOWOWOWWOW!!!!",
+			"You Smart Man",
+			"But Why....?",
+			"You don't say that things to Robots",
+			"Bra, Your Boned",
+			"LAMO you are a funny guy. :)))"
 	};
 	
 }
