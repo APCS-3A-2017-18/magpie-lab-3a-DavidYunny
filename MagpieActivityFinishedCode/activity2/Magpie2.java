@@ -66,7 +66,7 @@ public class Magpie2
 		} else if (whichResponse == 2){
 			response = "But Why....?";
 		} else if (whichResponse == 3){
-			response = "You don't say that things to Robots";
+			response = "You don't say that to the Robots";
 		} else if (whichResponse == 4){
 			response = "Bra, Your Boned";
 		} else if (whichResponse == 5){
