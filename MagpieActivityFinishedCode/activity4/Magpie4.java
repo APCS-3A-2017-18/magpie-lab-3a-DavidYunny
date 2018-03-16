@@ -119,6 +119,19 @@ public class Magpie4
 	 * @param statement the user statement, assumed to contain "you" followed by "me"
 	 * @return the transformed statement
 	 */
+	private String transformYouSthMeStatement(String statement){
+		statement = statement.trim();
+		String lastChar = statement.substring(statement.length()-1);
+		if (lastChar.equals(".")){
+			statement = statement.substring(0,statement.length()-1);
+		}
+		
+		int psnOfI = findKeyword(statement, "I", 0);
+		int psnOfYou = findKeyword(statement, "You", psnOfI + 1);
+		
+		String restOfStatement = statement.substring(psnOfI + 1, psnOfYou).trim();
+		return "Why do you " + restOfStatement + " me?";
+	}
 	private String transformYouMeStatement(String statement)
 	{
 		//  Remove the final period, if there is one
@@ -137,25 +150,6 @@ public class Magpie4
 		String restOfStatement = statement.substring(psnOfYou + 3, psnOfMe).trim();
 		return "What makes you think that I " + restOfStatement + " you?";
 	}
-	
-	private String transformYouSthMeStatement(String statement){
-		statement = statement.trim();
-		String lastChar = statement.substring(statement.length()-1);
-		if (lastChar.equals(".")){
-			statement = statement.substring(0,statement.length()-1);
-		}
-		
-		int psnOfI = findKeyword(statement, "I", 0);
-		int psnOfYou = findKeyword(statement, "You", psnOfI + 1);
-		
-		String restOfStatement = statement.substring(psnOfI + 1, psnOfYou).trim();
-		return "Why do you " + restOfStatement + " me?";
-	}
-	
-	
-
-	
-	
 	/**
 	 * Search for one word in phrase.  The search is not case sensitive.
 	 * This method will check that the given goal is not a substring of a longer string
