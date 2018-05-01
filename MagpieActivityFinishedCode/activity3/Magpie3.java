@@ -30,32 +30,55 @@ public class Magpie3
 	public String getResponse(String statement)
 	{
 		String response = "";
-		String statementTrim = statement.trim();
-		
-		if (statement.indexOf("no") >= 0){
-			response = "Why so negative?";
-		} else if (statement.indexOf("mother") >= 0 || statement.indexOf("father") >= 0 || statement.indexOf("sister") >= 0 || statement.indexOf("brother") >= 0){
-			response = "Tell me more about your family.";
-		} else if (statement.indexOf("Germany") >= 0 || statement.indexOf("Germany") >= 0){
-			response = "I used to live in Italy. We have pretty girls here";
-		} else if (statement.indexOf("dog") >= 0 || statement.indexOf("cat") >= 0 || statement.indexOf("pet") >= 0 || statement.indexOf("snake") >= 0){
-			response = "I also had some pets. But my Dog died 1 year ago.";
-		} else if (statement.indexOf("Germany") >= 0 || statement.indexOf("Germany") >= 0){
-			response = "I used to live in Italy. We have pretty girls here";
-		} else if (statement.indexOf("Mr") >= 0 || statement.indexOf("Mr.") >= 0){
-			response = "Oh Wait I also had him as my teacher!!";
-		} else if (statement.indexOf("Mrs") >= 0 || statement.indexOf("Mrs.") >= 0) {
-			response = "Wait!!!! I also had her as my teacher.";
-		} else if ((statement.indexOf("I") >= 0 || statement.indexOf("i") >= 0 )&& statement.indexOf("think") >= 0){
-			response = "Amen. LMAO";
-		} else if (!(statementTrim.length() >= 1)){
-			response = "You Serious Bro?";
-		} else if (statement.indexOf("food") >= 0){
-			response = "My favorite food is Korean BBQ!!!!!! LOVE THEM SO MUCH!!!!!!!!!!!!!!!!!!!!!<3<3";
-		} else {
-			response = getRandomResponse();
-		}
-		return response;
+  if (statement.length() == 0)
+  {
+   response = "Say something, please.";
+  }
+  else if (findKeyword(statement, "no") >= 0)
+  {
+   response = "Why so neg?";
+  }
+  else if (findKeyword(statement, "mother") >= 0
+    || findKeyword(statement, "father") >= 0
+    || findKeyword(statement, "sister") >= 0
+    || findKeyword(statement, "brother") >= 0)
+  {
+   response = "Tell me more bro";
+  }
+  else if (findKeyword(statement, "dog") >= 0 
+    || findKeyword(statement, "cat") >= 0)
+  {
+    response = "Tell me more about your pets.";
+  }
+  else if (findKeyword(statement, "Mr. Yun") >= 0)
+    {
+    response = "He sounds so intelligent";
+  }
+  else if (findKeyword(statement, "Miss Wong") >= 0)
+  {
+    response = "She must sounds like a CS teacher";
+  }
+   else if (statement.trim().length() == 0)
+   {
+     response = "Please enter in at least one character.";
+   }    
+   else if (findKeyword(statement, "old") >= 0)
+   {
+     response = "I will not disclose my age at this time.";
+   }
+   else if (findKeyword(statement, "where") >= 0)
+   {
+     response = "St. Louis, Missourri";
+   }
+   else if (findKeyword(statement, "why") >= 0)
+   {
+     response = "No good reason";
+   }
+  else 
+  {
+   response = getRandomResponse();
+  }
+  return response;
 	}
 
 	/**
